@@ -1,16 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nliu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 11:50:15 by nliu              #+#    #+#             */
-/*   Updated: 2023/03/30 16:21:33 by nliu             ###   ########.fr       */
+/*   Created: 2023/03/27 16:36:47 by nliu              #+#    #+#             */
+/*   Updated: 2023/03/27 18:07:56 by nliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+	int	i;
+
+	if (!dst || !src)
+		return (NULL);
+	if (dst > src)
+	{
+		i = (int)len - 1;
+		while (i >= 0)
+		{
+			*(char *)(dst + i) = *(char *)(src + i);
+			i++;
+		}
+	}
+	return (dst);
 }
