@@ -6,19 +6,23 @@
 /*   By: nliu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 21:07:05 by nliu              #+#    #+#             */
-/*   Updated: 2023/03/29 00:36:11 by nliu             ###   ########.fr       */
+/*   Updated: 2023/04/01 18:22:35 by nliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char *str, char c)
+char	*ft_strchr(const char *str, int c)
 {
-	while (*str != '\0')
+	while (*str)
 	{
 		if (*str == c)
 		{
-			return (str);
+			return ((char *) str);
 		}
 		str++;
+	}
+	if (c == '\0')
+	{
+		return ((char *)str);
 	}
 	return (NULL);
 }
