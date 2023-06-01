@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nliu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 01:03:35 by nliu              #+#    #+#             */
-/*   Updated: 2023/05/29 20:02:40 by nliu             ###   ########.fr       */
+/*   Created: 2023/05/31 20:58:03 by nliu              #+#    #+#             */
+/*   Updated: 2023/05/31 21:40:09 by nliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
-{
-	size_t	i;
+#include "libft.h"
 
-	if (n == 0)
-		return (0);
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }

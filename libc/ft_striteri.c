@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nliu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 01:03:35 by nliu              #+#    #+#             */
-/*   Updated: 2023/05/29 20:02:40 by nliu             ###   ########.fr       */
+/*   Created: 2023/05/31 20:20:56 by nliu              #+#    #+#             */
+/*   Updated: 2023/05/31 20:44:06 by nliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	if (s == NULL || f == NULL)
+	{
+		return;
+	}
 
-	if (n == 0)
-		return (0);
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	for (unsigned int i = 0; s[i] != '\0'; ++i)
+	{
+		f(i, &s[i]);
+	}
 }
