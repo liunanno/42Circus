@@ -21,7 +21,7 @@ void	ft_putnbr_pf(int num, size_t *counter)
 	}
 	else if (num < 0)
 	{
-		ft_putchar_pf('_', counter);
+		ft_putchar_pf('-', counter);
 		ft_putnbr_pf(-num, counter);
 	}
 	else
