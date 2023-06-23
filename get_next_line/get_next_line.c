@@ -6,7 +6,7 @@
 /*   By: nliu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 17:00:05 by nliu              #+#    #+#             */
-/*   Updated: 2023/06/20 17:20:23 by nliu             ###   ########.fr       */
+/*   Updated: 2023/06/23 17:16:52 by nliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_save(char *save)
 {
 	int	i;
 	int	c;
-	char	*s;
+	char    *s;
 
 	i = 0;
 	while (save[i] && save[i] != '\n')
@@ -68,10 +68,10 @@ char	*ft_save(char *save)
 
 char	*ft_read_and_save(int fd, char *save)
 {
-	char	*buff;
+	char	     *buff;
 	int	read_bytes;
 
-	buff = malloc((BUFFER_SIZE + 1) *sizeof(char));
+	buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buff)
 		return (NULL);
 	read_bytes = 1;
@@ -92,7 +92,7 @@ char	*ft_read_and_save(int fd, char *save)
 
 char	*get_next_line(int fd)
 {
-	char	*line;
+	char		*line;
 	static char	*save;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)

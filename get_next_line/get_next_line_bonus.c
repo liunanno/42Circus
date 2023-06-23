@@ -31,6 +31,11 @@ char	*ft_get_line(char *save)
 		s[i] = save[i];
 		i++;
 	}
+	if (save[i] == '\n')
+	{
+		s[i] = save [i];
+		i++;
+	}
 	s[i] = '\0';
 	return (s);
 }
