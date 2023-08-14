@@ -6,7 +6,7 @@
 /*   By: nliu <nliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 17:31:33 by nliu              #+#    #+#             */
-/*   Updated: 2023/08/10 17:55:56 by nliu             ###   ########.fr       */
+/*   Updated: 2023/08/14 17:01:14 by nliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,12 @@ int is_correct_input(char **av)
     {
         if (!arg_is_number(av[i]))
             return (0);
-        if (have_duplicates(av))
-            return (0);
-        return (1);
+        nb_zeros += arg_is_zero(av[1]);
+        i++;
     }
+    if (nb_zeros > 1)
+        return (0);
+    if (have_duplicates(av))
+        return (0);
+    return (1);
 }

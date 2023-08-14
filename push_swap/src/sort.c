@@ -6,7 +6,7 @@
 /*   By: nliu <nliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 22:18:18 by nliu              #+#    #+#             */
-/*   Updated: 2023/08/10 22:18:20 by nliu             ###   ########.fr       */
+/*   Updated: 2023/08/14 17:16:38 by nliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,18 @@ static void shift_stack(t_stack **stack_a)
             lowest_pos--;
         }
     }
+}
 
-    void    sort(t_stack **stack_a, t_stack **stack_b)
+void    sort(t_stack **stack_a, t_stack **stack_b)
+{
+    push_all_save_three(stack_a, stack_b);
+    tiny_sort(stack_a);
+    while (*stack_b)
     {
-        push_all_save_three(stack_a, stack_b);
-        tiny_sort(stack_a);
-        while (*stack_b)
-        {
-            get_target_position(stack_a, stack_b);
-            get_cost(stack_a, stack_b);
-            do_cheapest_move(stack_a, stack_b);
-        }
-        if (!is_sorted(*stack_a))
-            shift_stack(stack_a);
+        get_target_position(stack_a, stack_b);
+        get_cost(stack_a, stack_b);
+        do_cheapest_move(stack_a, stack_b);
     }
+    if (!is_sorted(*stack_a))
+        shift_stack(stack_a);
 }

@@ -6,7 +6,7 @@
 /*   By: nliu <nliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 18:19:58 by nliu              #+#    #+#             */
-/*   Updated: 2023/08/10 18:46:31 by nliu             ###   ########.fr       */
+/*   Updated: 2023/08/14 17:32:59 by nliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void get_position(t_stack **stack)
 int get_lowest_index_position(t_stack **stack)
 {
     t_stack *tmp;
-    int get_lowest_index;
+    int lowest_index;
     int lowest_pos;
 
     tmp = *stack;
@@ -49,7 +49,7 @@ int get_lowest_index_position(t_stack **stack)
     return (lowest_pos);
 }
 
-static int  get_target(t_stack **a, int b_idx, int target_idx, int target)
+static int  get_target(t_stack **a, int b_idx, int target_idx, int target_pos)
 {
     t_stack *tmp_a;
 

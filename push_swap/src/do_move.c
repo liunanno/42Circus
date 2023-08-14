@@ -6,13 +6,13 @@
 /*   By: nliu <nliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 19:35:59 by nliu              #+#    #+#             */
-/*   Updated: 2023/08/09 20:51:21 by nliu             ###   ########.fr       */
+/*   Updated: 2023/08/14 18:09:47 by nliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void do_rev_rotate_both(t_stack **a, t_stack **b)
+static void do_rev_rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 {
     while (*cost_a < 0 && *cost_b < 0)
     {
@@ -33,6 +33,23 @@ static void do_rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 }
 
 static void do_rotate_a(t_stack **a, int *cost)
+{
+    while(*cost)
+    {
+        if (*cost > 0)
+        {
+            do_ra(a);
+            (*cost)--;
+        }
+        else if (*cost < 0)
+        {
+            do_rra(a);
+            (*cost)++;
+        }
+    }
+}
+
+static void do_rotate_b(t_stack **b, int *cost)
 {
     while(*cost)
     {
