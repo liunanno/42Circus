@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nliu <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: nliu <nliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 13:49:48 by nliu              #+#    #+#             */
-/*   Updated: 2023/06/08 14:37:01 by nliu             ###   ########.fr       */
+/*   Updated: 2023/10/01 20:15:23 by nliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@
 
 int	ft_printf(char const *str, ...);
 
-void	ft_putchar_pf(char c, size_t *counter);
-void	ft_putstr_pf(char *str, size_t *counter);
-void	ft_putnbr_pf(int num, size_t *counter);
-void	ft_putuint_pf(unsigned int num, size_t *counter);
-void	ft_puthex_pf(unsigned int num, size_t *counter, char *base);
-void	ft_putptr_pf(void *ptr, size_t *counter);
+void	ft_putchar(char c, size_t *counter);
+void	ft_putstr(char *str, size_t *counter);
+void	ft_putnbr(int num, size_t *counter);
+void	ft_putuint(unsigned int num, size_t *counter);
+void	ft_puthex(unsigned int num, size_t *counter, char *base);
+void	ft_putptr(void *ptr, size_t *counter);
 
-char	*ft_aux_pf(unsigned long long n, char *base);
+char	*ft_aux(unsigned long long n, char *base);
 
 #endif
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nliu <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: nliu <nliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 17:42:19 by nliu              #+#    #+#             */
-/*   Updated: 2023/06/06 18:40:59 by nliu             ###   ########.fr       */
+/*   Updated: 2023/10/01 20:26:57 by nliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,24 @@
 void	ft_format(va_list va, char *str, size_t *counter)
 {
 	if (*str == 'c')
-		ft_putchar_pf(va_arg(va, int), counter);
+		ft_putchar(va_arg(va, int), counter);
 	else if (*str == 's')
-		ft_putstr_pf(va_arg(va, char *), counter);
+		ft_putstr(va_arg(va, char *), counter);
 	else if (*str == 'p')
-		ft_putptr_pf(va_arg(va, void *), counter);
+		ft_putptr(va_arg(va, void *), counter);
 	else if (*str == 'i' || *str == 'd')
-		ft_putnbr_pf(va_arg(va, int), counter);
+		ft_putnbr(va_arg(va, int), counter);
 	else if (*str == 'u')
-		ft_putuint_pf(va_arg(va, unsigned int), counter);
+		ft_putuint(va_arg(va, unsigned int), counter);
 	else if (*str == 'x' || *str == 'X')
 	{
 		if (*str == 'x')
-			ft_puthex_pf(va_arg(va, unsigned int), counter, HEX_LOW_BASE);
+			ft_puthex(va_arg(va, unsigned int), counter, HEX_LOW_BASE);
 		else
-			ft_puthex_pf(va_arg(va, unsigned int), counter, HEX_UPP_BASE);
+			ft_puthex(va_arg(va, unsigned int), counter, HEX_UPP_BASE);
 	}
 	else if (*str == '%')
-		ft_putchar_pf(*str, counter);
+		ft_putchar(*str, counter);
 }
 
 int	ft_printf(char const *str, ...)
@@ -52,7 +52,7 @@ int	ft_printf(char const *str, ...)
 			ft_format(va, (char *)str, &counter);
 		}
 		else
-			ft_putchar_pf(*str, &counter);
+			ft_putchar(*str, &counter);
 		str++;
 	}
 	va_end(va);
